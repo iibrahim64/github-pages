@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BARO G4.0.1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gıf">
+        <img src="ana.gif" alt="hacker" class="fullscreen-gif">
+    </div>
+    <div class="container">
+        <input type="text" id="textInput" placeholder="BARO Sizin İçin Ne Arasın?" required>
+        <button onclick="redirect()">Ara</button>
+    </div>
+    <script>
+        function redirect() {
+            // Kullanıcıdan alınan metni temizle ve küçük harfe çevir
+            const inputText = document.getElementById('textInput').value.trim().toLowerCase();
+
+            // Boş giriş kontrolü
+            if (!inputText) {
+                alert('Lütfen bir metin girin.');
+                return;
+            }
+
+            // Anahtar kelimelere göre bağlantıları tanımlayın (küçük harflerle)
+            const links = {
+                "kim jung un": "https://kim-jonggizli1.my.canva.site/dagbcirp7ju",
+                "ahmet": "ahmet.html",
+                "selin": "selin.html",
+                "hacker": "https://example.com/hacker-info"
+            };
+
+            // Anahtar kelime kontrolü yap
+            if (links[inputText]) {
+                // Anahtar kelimeye karşılık gelen bağlantıya yönlendirme yap
+                window.location.href = links[inputText];
+            } else {
+                // Anahtar kelime bulunamazsa uyarı göster
+                alert('Aradığınız kelimeye uygun bir sayfa bulunamadı.');
+            }
+        }
+    </script>
+</body>
+</html>
